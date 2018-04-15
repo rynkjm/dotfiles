@@ -1,0 +1,11 @@
+set noundofile "undo fileを作らない"
+set noswapfile "スワップファイルを作らない"
+set nobackup "バックアップを取らない"
+set notitle "vimのタイトルを出さない"
+set nrformats=  "10進数で扱う"
+
+
+
+" Ev/Rvでvimrcの編集と反映
+command! Ev edit $MYVIMRC
+command! Rv source $MYVIMRC
