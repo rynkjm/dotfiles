@@ -9,3 +9,4 @@ ln -snf ~/dotfiles/.vimrc.apperance ~/.vimrc.apperance
 ln -snf ~/dotfiles/.vimrc.plug ~/.vimrc.plug
 ln -snf ~/dotfiles/.vimrc.moving ~/.vimrc.moving
 ln -snf ~/dotfiles/.gitconfig ~/.gitconfig
+ln -snf ~/dotfiles/.tigrc ~/.tigrc
