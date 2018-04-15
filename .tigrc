@@ -7,4 +7,5 @@ bind generic U       ?git pull %(remote)
 bind generic P       ?git push -u %(remote) %(repo:head)
 # + で commit --amend
 bind generic +       !git commit --amend
-
+# ^ で reset --soft
+bind generic ^       ?git reset --soft HEAD^
