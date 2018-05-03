@@ -26,4 +26,3 @@ function promps {
 }
 promps
 export PATH=$PATH
-

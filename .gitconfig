@@ -9,24 +9,30 @@
 	interactive = auto
 	grep = auto
 [alias]
-	st = status
+	unstage = reset -q HEAD --
+	discard = checkout --
+	uncommit = reset --mixed HEAD~
+	save = commit -m
+	resave = commit -amend
+	summary = status -u -s
+	move = mv
+	remove = rm
+	new-branch = checkout -b
+	rename-branch = branch -m
+	delete-branch = branch -D
+	branches = branch -a
+	constract = !git fetch --all -p && git branch -a -vv
+	tags = tag
+	stashes = stash list
+	amend = commit --amend --no-edit
+	st = status -s
+	precommit = diff --cached --diff-algorithm=minimal -w
+	remotes = remote -v
 	co = checkout
-	bra = branch
-	ci = commit
-	cancel = rest --soft HEAD^
+	unmerged = diff --name-only --diff-filter=U
 	today = log --oneline --since='12 hour ago'
-	mer = merge
 	gr = log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cd %Cblue%cn %Cred%d %Creset%s'
-	ad = add
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   	lga = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-[include]
-	path = ~/dotfiles/.gitconfig_github
 [core]
 	excludesfile = /Users/rynkjm/.gitignore_global
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
