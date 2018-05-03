@@ -16,6 +16,6 @@ function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ [\1]/'
 }
 
-export PS1="\n\w>\n\t\$(parse_git_branch) \\$ \[$(tput sgr0)\]"
+export PS1="\T \u@\h:\W\$(parse_git_branch) \\$ \[$(tput sgr0)\]"
 export PATH=$PATH
 
