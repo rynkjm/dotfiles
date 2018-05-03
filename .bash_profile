@@ -17,12 +17,16 @@ function parse_git_branch {
 }
 function promps {
 
-    local  BLUE="\[\e[1;34m\]"
+    local  BLACK="\[\e[1;30m\]"
     local  RED="\[\e[1;31m\]"
     local  GREEN="\[\e[1;32m\]"
-    local  WHITE="\[\e[00m\]"
+    local  YELLOW="\[\e[1;33m\]"
+    local  BLUE="\[\e[1;34m\]"
+    local  MAGENTA="\[\e[1;35m\]"
+    local  CYAN="\[\e[1;36m\]"
     local  GRAY="\[\e[1;37m\]"
-    export PS1="${GRAY}\T ${BLUE}\u$@\h${GRAY}:${RED}\W${GREEN}\$(parse_git_branch) \\$ \[$(tput sgr0)\]"
+    local  WHITE="\[\e[00m\]"
+    export PS1="${YELLOW}\T ${BLUE}\u${GRAY}@${CYAN}\h${GRAY}:${RED}\W${MAGENTA}\$(parse_git_branch) ${GREEN}\\$ \[$(tput sgr0)\]"
 }
 promps
 export PATH=$PATH
