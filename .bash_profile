@@ -15,7 +15,15 @@ export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
 function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ [\1]/'
 }
+function promps {
 
-export PS1="\T \u@\h:\W\$(parse_git_branch) \\$ \[$(tput sgr0)\]"
+    local  BLUE="\[\e[1;34m\]"
+    local  RED="\[\e[1;31m\]"
+    local  GREEN="\[\e[1;32m\]"
+    local  WHITE="\[\e[00m\]"
+    local  GRAY="\[\e[1;37m\]"
+    export PS1="${GRAY}\T ${BLUE}\u$@\h${GRAY}:${RED}\W${GREEN}\$(parse_git_branch) \\$ \[$(tput sgr0)\]"
+}
+promps
 export PATH=$PATH
 
